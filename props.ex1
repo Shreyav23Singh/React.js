@@ -1,3 +1,4 @@
+Question => Can you pass LocationOfExpenditure as props and show it on the screen
 //* * * App.js * * *//
 
 import './App.css';
