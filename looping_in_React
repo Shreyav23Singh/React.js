@@ -1,0 +1,96 @@
+** * * * *  App.js * * *  * *
+
+import './App.css';
+import ExpenseItem from './ExpenseItem';
+
+function App() {
+  const expenses=[
+    {
+      id:' e1 ',
+      title : 'Mobile' ,
+      amount: 50000 ,
+      date :new Date(2023,6,21),
+      locationOfexpend:"Asansol",
+
+
+    },
+    {
+      id:' e2',
+      title : 'Home' ,
+      amount: 965 ,
+      date :new Date(2023,7,21),
+      locationOfexpend:"Asansol",
+
+
+    },
+    {
+      id:' e3 ',
+      title : 'Car' ,
+      amount: 10.5 ,
+      date :new Date(2023,8,21),
+      locationOfexpend:"Asansol",
+
+
+    },
+    {
+      id:' e4 ',
+      title : 'Furniture' ,
+      amount: 65.5 ,
+      date :new Date(2023,9,21),
+      locationOfexpend:"Asansol",
+
+
+    },
+
+  ];
+
+    return (
+      <div className="App">
+        {expenses.map((expense) => (
+          <ExpenseItem key={expense.id} expense={expense} />
+        ))}
+      </div>
+    );
+  }
+  
+
+export default App;
+
+
+* * * * * * ** * * * * * * * ExpenseItem.js * * * * * * * * * 
+//  import './ExpenseItem.css';
+// function ExpenseItem(expense){
+    
+//     return (
+//         <div>
+//         {        expense.map((expenses)=>(
+//                 <div key ={expense.id}>
+//                 title={expense.title}
+//                 amount={expense.amount}
+//                 date={expense.date}
+//                 locationOfexpend ={expense.locationOfexpend}/>
+
+//             ))}
+//         </div>
+      
+//     );
+// }
+
+import './ExpenseItem.css';
+
+function ExpenseItem(expense) {
+  return (
+    <div>
+      {expense.map((expense) => (
+        <ExpenseItem key={expense.id}>
+          <h2>{expense.title}</h2>
+          <p>{expense.amount}</p>
+          <p>{expense.date}</p>
+          <p>{expense.locationOfexpend}</p>
+        </ExpenseItem>
+      ))}
+    </div>
+  );
+}
+
+export default ExpenseItem;
