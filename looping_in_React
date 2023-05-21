@@ -1,3 +1,6 @@
+Question2.The udemy trainer is calling ExpenseItems Component 4 times to show 4 expenses. If you have 100 expenses you would have to write ExpenseItems Component 100 times. 
+Can you do this via looping so that you dont have to manually write .
+
 ** * * * *  App.js * * *  * *
 
 import './App.css';
