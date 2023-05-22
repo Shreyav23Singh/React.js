@@ -1,0 +1,53 @@
+import ExpenseDate from './ExpenseDate';
+
+import Card from './Card';
+
+import './ExpenseItem.css';
+
+const ExpenseItem = (props) =>{
+
+    const clickHandler = () =>{
+
+        console.log('clicked!!!!');
+
+    };
+
+    const deleteExp =() =>{
+
+        console.log('Deleted!!!!');
+
+
+
+    };
+
+
+
+    return (
+
+        <Card className="expense-item">
+
+        <ExpenseDate  date={props.date}/>
+
+        <div>{props.date.toISOString()}</div>
+
+        <div className=".expense-item__description">
+
+        <h2>{props.title}</h2>
+
+        <div className="expense-item__price">${props.amount}</div>
+
+        <div className="expense-item__location">{props.locationOfExpend}</div>
+
+        </div>
+
+        <button onClick={clickHandler}>Change Title</button>
+
+        <button onClick={deleteExp}>Delete Expense</button>
+
+        </Card>
+
+    );
+
+}
+
+export default ExpenseItem;
