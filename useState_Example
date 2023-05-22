@@ -1,0 +1,50 @@
+Write code to add a button next to each expense which changes expense to 100$ whenever we click on it.Use same logic as change title.
+import React, {  useState } from 'react';
+import ExpenseDate from './ExpenseDate';
+import Card from './Card';
+import './ExpenseItem.css';
+const ExpenseItem = (props) =>{
+    const [title, setTitle ] =useState(props.title);
+   
+    
+    const clickHandler = () =>{
+        setTitle('Updated!');
+   
+        console.log(title);
+    };
+    const [expenses , setExpenses] =useState([
+        {
+            title: props.title,
+            amount: props.amount,
+            locationOfExpend: props.locationOfExpend,
+          },
+    ]);
+    const handleChangeExpense = (expense) => {
+        expense.amount = 100;
+        setExpenses([...expenses]);
+      };
+
+    return (
+        <Card className="expense-item">
+        <ExpenseDate  date={props.date}/>
+        <div>{props.date.toISOString()}</div>
+        <div className=".expense-item__description">
+        <h2>{title}</h2>
+        <div className="expense-item__price">${props.amount}</div>
+        <div className="expense-item__location">{props.locationOfExpend}</div>
+        </div>
+        <button onClick={clickHandler}>Change Title</button>
+       
+        {expenses.map((expense) => (
+          <div key={expense.id}>
+            <h3>{expense.title}</h3>
+            <p>{expense.amount}</p>
+            <button onClick={() => handleChangeExpense(expense)}>Change to $100</button>
+          </div>
+        ))}
+    
+  
+        </Card>
+    );
+}
+export default ExpenseItem;
