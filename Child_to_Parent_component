@@ -1,4 +1,5 @@
 ****_________________________________________________ ExpenseForm.js ****__________________________________________________________________
+Moving data from a child to parent component by utilizing props to recieve a function from the parent component which we call in a child component .
 import React, { useState } from "react";
 import './ExpenseForm.css';
 
